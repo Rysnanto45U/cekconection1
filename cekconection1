@@ -1,0 +1,28 @@
+echo "--SELAMAT DATANG DI PROGRAM PERTAMA SAYA--"
+echo "[-Semoga hari Anda beruntung-]"
+echo "--++ [PROGRAM BY Spensakra IXI] ++--"
+
+echo "=[Silahkan Pilih Menu yang diinginkan!]="
+
+echo "[1] Tes Koneksi HP"
+echo "[2] Tentang"
+
+read -p "[?] Silahkan masukkan pilhan anda [1-2]:" pilih
+
+case $pilih in 
+1)
+echo "[*] Sedang Mengecek Koneksi..."
+sleep 3
+ping -c1 -W3 8.8.8.8 > /dev/null 2>&1
+[[ $? = 0 ]] && echo "[*] Koneksi wapik Tenan" || echo "[!] Koneksi elek kyk muka lo.."
+;;
+2) 
+echo "[*] Tentang"
+echo "[*] Tool buat tes koneksi..."
+;;
+*)
+echo "[*] Anda Salah memasukkan pilihan silahkan ulangi lagi dari awal...."
+sleep 1
+source $0
+;;
+esac
